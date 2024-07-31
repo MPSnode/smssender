@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilio SMS Sender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Twilio SMS Sender</h1>
+        <form id="smsForm">
+            <div>
+                <label for="account_sid">Account SID:</label>
+                <input type="text" id="account_sid" name="account_sid" required>
+            </div>
+            <div>
+                <label for="auth_token">Auth Token:</label>
+                <input type="text" id="auth_token" name="auth_token" required>
+            </div>
+            <div>
+                <label for="sender">Sender:</label>
+                <input type="text" id="sender" name="sender" required>
+            </div>
+            <div>
+                <label for="recipients">Recipients (comma-separated):</label>
+                <textarea id="recipients" name="recipients" required></textarea>
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Send SMS</button>
+        </form>
+        <button id="balanceBtn">Check Balance and Limits</button>
+        <div id="results"></div>
+        <div id="balanceInfo"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
